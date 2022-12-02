@@ -1,23 +1,21 @@
 import java.io.File
 
 fun main() {
-    fun part1(input: List<String>): Int {
-        return input.map{
+    fun getInts(list: List<String>): List<Int> =
+        list.map {
             it.split("\n")
         }
             .map {
                 it.sumOf { v -> v.toInt() }
             }
+
+    fun part1(input: List<String>): Int {
+        return getInts(input)
             .maxOf { it }
     }
 
     fun part2(input: List<String>): Int {
-        return input.map{
-                it.split("\n")
-            }
-            .map {
-                it.sumOf { v -> v.toInt() }
-            }
+        return getInts(input)
             .sorted()
             .takeLast(3)
             .sum()
