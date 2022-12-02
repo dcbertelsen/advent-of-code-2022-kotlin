@@ -1,3 +1,5 @@
+import java.io.File
+
 fun main() {
     fun part1(input: List<String>): Int {
         return input.map{
@@ -25,7 +27,7 @@ fun main() {
     // val testInput = readInput("Day01_test")
     // check(part1(testInput) == 1)
 
-    val input = File("./src/main/resources/twentytwo/Day01a.txt").readText().split("\n\n")
+    val input = File("./src/resources/Day01a.txt").readText().split("\n\n")
     println(part1(input))
     println(part2(input))
 }
